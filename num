@@ -1,0 +1,11 @@
+#!/bin/bash
+
+ff=$(cat 1 | awk 'END {print NR}')
+sf=$(cat 2 | awk 'END {print NR}')
+tf=$(cat 3 | awk 'END {print NR}')
+
+if [[ $ff == $sf && $sf == $tf && $sf == $ff ]]; then
+    echo "Во всех группах одинаковое колличество человек"
+else
+    echo "У вас всё плохо"
+fi
