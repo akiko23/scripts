@@ -5,7 +5,7 @@ if [[ -z $1 ]]; then
 fi
 
 for ff in $(cat 1); do
-    if [[ $(grep -q $ff 2) ]]; then
+    if [[ $(grep -q -w $ff 2) ]]; then
         echo "Есть повторяющееся имя $ff"
         exit 1
     fi
