@@ -1,0 +1,10 @@
+#!/bin/bash
+
+chmod +x num
+result="Во всех группах одинаковое колличество человек"
+
+if [[ $(bash -c "./num 1 2") ]]; then
+    exit 0
+else
+    exit 1
+fi

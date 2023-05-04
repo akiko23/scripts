@@ -1,20 +1,13 @@
 #!/bin/bash
 
+if [[ -z $1 ]]; then
+    exit 1
+fi
+
 for ff in $(cat 1); do
-    if [[ $(grep -q $ff 2) || $(grep -q $ff 3) ]]; then
+    if [[ $(grep -q $ff 2) ]]; then
         echo "Есть повторяющееся имя $ff"
-    fi
-done
-
-for sf in $(cat 2); do
-    if [[ $(grep -q $sf 1) || $(grep -q $sf 3) ]]; then
-        echo "Есть повторяющееся имя $sf в файле 2"
-    fi
-done
-
-for tf in $(cat 3); do
-    if [[ $(grep -q $tf 1) || $(grep -q $tf 2) ]]; then
-        echo "Есть повторяющееся имя $tf в файле 3"
+        exit 1
     fi
 done
 
