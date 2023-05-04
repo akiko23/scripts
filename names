@@ -4,8 +4,8 @@ if [[ -z $1 ]]; then
     exit 1
 fi
 
-for ff in $(cat 1); do
-    if [[ $(grep -q -w $ff 2) ]]; then
+for ff in $(cat $1); do
+    if [[ $(grep -q -w $ff $2) ]]; then
         echo "Есть повторяющееся имя $ff"
         exit 1
     fi
